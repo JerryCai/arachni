@@ -2,7 +2,7 @@ FROM ubuntu:14.04
 
 MAINTAINER Jerry Cai
 
-ARG ARACHNI_VERSION
+ARACHNI_VERSION=arachni-1.4-0.5.10
 ENV ARACHNI_SERVER_ROOT_PASSWORD arachni
 ENV ARACHNI_PARAMS --authentication-username arachni --authentication-password password --only-positives
 
