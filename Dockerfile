@@ -2,7 +2,7 @@ FROM ubuntu:14.04
 
 MAINTAINER Jerry Cai
 
-ARG ARACHNI_VERSION=arachni-1.4-0.5.10
+ARG ARACHNI_VERSION=arachni-1.5.1-0.5.12
 ENV ARACHNI_SERVER_ROOT_PASSWORD arachni
 ENV ARACHNI_PARAMS --authentication-username arachni --authentication-password password --only-positives
 
@@ -39,5 +39,5 @@ RUN chmod 777 /usr/local/arachni/start.sh
 ADD supervisor.conf /etc/supervisor.conf
 ADD arachni.conf /etc/supervisor/conf.d/arachni.conf
 
-EXPOSE 22 7331
+EXPOSE 22 7331 9292
 CMD ["supervisord", "-c", "/etc/supervisor.conf"]
