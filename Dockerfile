@@ -3,7 +3,7 @@ FROM ubuntu:14.04
 MAINTAINER Jerry Cai
 
 ARG ARACHNI_VERSION=arachni-1.5.1-0.5.12
-ENV ARACHNI_SERVER_ROOT_PASSWORD arachni
+ENV SERVER_ROOT_PASSWORD arachni
 ENV ARACHNI_PARAMS --authentication-username arachni --authentication-password password --only-positives
 
 RUN apt-get update
