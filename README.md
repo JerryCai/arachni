@@ -23,7 +23,7 @@ password: password
 - you can also customize arachni rest server like below:
 
 ```sh
-docker run -d -p 222:22 -p 7331:7331 --name arachni -e SERVER_ROOT_PASSWORD="DockerArachniPWD" -e ARACHNI_PARAMS="--authentication-username arachni --authentication-password Pass123 --only-positives"  arachni:1.4
+docker run -d -p 222:22 -p 7331:7331 --name arachni -e ARACHNI_SERVER_ROOT_PASSWORD="DockerArachniPWD" -e ARACHNI_PARAMS="--authentication-username arachni --authentication-password Pass123 --only-positives"  arachni:1.4
 
 ```
 then you can use
