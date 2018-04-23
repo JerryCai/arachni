@@ -12,7 +12,8 @@ RUN apt-get -y install \
                 openssh-server \
                 wget \
                 curl \
-                supervisor
+                supervisor \
+                unzip
 
 RUN mkdir /var/run/sshd && \
     mkdir -p /var/log/supervisor && \
