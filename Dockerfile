@@ -36,6 +36,8 @@ RUN chmod 777 /usr/local/chpasswd.sh
 
 COPY "$PWD"/start.sh /usr/local/arachni/start.sh
 RUN chmod 777 /usr/local/arachni/start.sh
+COPY "$PWD"/start_web.sh /usr/local/arachni/start_web.sh
+RUN chmod 777 /usr/local/arachni/start_web.sh
 
 ADD supervisor.conf /etc/supervisor.conf
 ADD arachni.conf /etc/supervisor/conf.d/arachni.conf
