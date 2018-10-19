@@ -19,7 +19,16 @@ meanwhile , for access arachni RESTful API default username and password is :
 username: arachni
 password: password
 ```
-
+Web-UI Admin's username and password
+```text
+username: admin@admin.admin
+password: administrator
+```
+Web-UI User's username and password
+```text
+username: user@user.user
+password: regular_user
+```
 RESTful API endpoint will be
 ```text
 http://${docker-machineIP}:7331
