@@ -1,0 +1,29 @@
+version: '3'
+services:
+  postgres:
+    image: postgres:9.6
+    restart: always
+    environment:
+      POSTGRES_DB: arachni
+      POSTGRES_USER: test_username
+      POSTGRES_PASSWORD: test_username
+      PGDATA: /var/lib/postgresql/data/pgdata
+    volumes:
+      - ./cache/postgres/data/:/var/lib/postgresql/data/pgdata
+    ports:
+      - "5432:5432"
+  arachni:
+    build: .
+    command: bash -c "sleep 10 && entrypoint.sh"
+    environment:
+      DB_ADAPTER: postgresql
+      DB_HOST: postgres
+      DB_NAME: arachni
+      DB_USER: test_username
+      DB_PASS: test_username
+    ports:
+      - "7331:7331"
+      - "9292:9292"
+      - "222:22"
+    depends_on:
+      - postgres
