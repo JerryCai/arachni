@@ -59,4 +59,9 @@ export ARACHNI_WEBUI_LOGDIR="$env_root/logs/webui"
 
 export HOME="$env_root/home/arachni"
 
-exec ruby $env_root/arachni-ui-web/bin/arachni_rest_server --address 0.0.0.0 $ARACHNI_PARAMS
+exec ruby \
+  $env_root/arachni-ui-web/bin/arachni_rest_server \
+  --address 0.0.0.0 \
+  --authentication-username ${ARACHNI_USERNAME} \
+  --authentication-password ${ARACHNI_PASSWORD} \
+  --only-positives
